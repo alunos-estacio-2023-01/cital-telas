@@ -11,4 +11,5 @@ class ControladorCital:
             total_por_item = self.modelo.obter_total_por_item(),
             receita_por_item = self.modelo.obter_receita_por_item(),
             vendas_por_data = self.modelo.obter_vendas_por_data(),
+            receita_por_data = self.modelo.obter_receita_por_data(),
         )
