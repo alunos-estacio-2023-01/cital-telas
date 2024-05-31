@@ -19,3 +19,6 @@ class ModeloCital:
 
     def obter_receita_por_item(self) -> pd.DataFrame:
         return self.df.groupby('nome')['receita'].sum().reset_index()
+
+    def obter_vendas_por_data(self) -> pd.DataFrame:
+        return self.df.groupby(pd.Grouper(key='data', freq='ME'))['quantidade'].sum().reset_index()

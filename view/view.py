@@ -7,6 +7,7 @@ class VisualizacaoCital:
             self,
             total_por_item: pd.DataFrame,
             receita_por_item: pd.DataFrame,
+            vendas_por_data: pd.DataFrame,
     ) -> None:
         fig = px.bar(
                 total_por_item,
@@ -21,5 +22,13 @@ class VisualizacaoCital:
                 x='nome',
                 y='receita',
                 title='Receita Total por Tipo de Item',
+            )
+        st.plotly_chart(fig)
+
+        fig = px.line(
+                vendas_por_data,
+                x='data',
+                y='quantidade',
+                title='Vendas ao Longo do Tempo',
             )
         st.plotly_chart(fig)
