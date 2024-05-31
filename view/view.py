@@ -9,6 +9,7 @@ class VisualizacaoCital:
             receita_por_item: pd.DataFrame,
             vendas_por_data: pd.DataFrame,
             receita_por_data: pd.DataFrame,
+            forma_pagamento: pd.DataFrame,
     ) -> None:
         fig = px.bar(
                 total_por_item,
@@ -39,5 +40,13 @@ class VisualizacaoCital:
                 x='data',
                 y='receita',
                 title='Receita ao Longo do Tempo',
+            )
+        st.plotly_chart(fig)
+
+        fig = px.pie(
+                forma_pagamento,
+                names='forma_pagamento',
+                values='quantidade',
+                title='Forma de Pagamento Utilizada',
             )
         st.plotly_chart(fig)
