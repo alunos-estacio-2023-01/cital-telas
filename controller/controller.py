@@ -9,4 +9,5 @@ class ControladorCital:
     def executar(self) -> None:
         self.visualizacao.exibir_pagina(
             total_por_item = self.modelo.obter_total_por_item(),
+            receita_por_item = self.modelo.obter_receita_por_item(),
         )
