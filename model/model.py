@@ -12,3 +12,6 @@ class ModeloCital:
             raise ValueError(f"Erro ao processar o arquivo json")
 
         self.df['data'] = pd.to_datetime(self.df['data'], utc=True)
+
+    def obter_total_por_item(self) -> pd.DataFrame:
+        return self.df.groupby('nome')['quantidade'].sum().reset_index()
