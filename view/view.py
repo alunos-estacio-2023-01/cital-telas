@@ -11,6 +11,7 @@ class VisualizacaoCital:
             receita_por_data: pd.DataFrame,
             forma_pagamento: pd.DataFrame,
             preco_medio_por_item: pd.DataFrame,
+            raw_df: pd.DataFrame,
     ) -> None:
         fig = px.bar(
                 total_por_item,
@@ -59,3 +60,6 @@ class VisualizacaoCital:
                 title='Preço Médio por Tipo de Item',
             )
         st.plotly_chart(fig)
+
+        st.write("Dados:")
+        st.write(raw_df)

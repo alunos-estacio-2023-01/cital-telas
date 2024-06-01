@@ -14,4 +14,5 @@ class ControladorCital:
             receita_por_data = self.modelo.obter_receita_por_data(),
             forma_pagamento = self.modelo.obter_forma_pagamento(),
             preco_medio_por_item = self.modelo.obter_preco_medio_por_item(),
+            raw_df = self.modelo.df,
         )
