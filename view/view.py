@@ -10,6 +10,7 @@ class VisualizacaoCital:
             vendas_por_data: pd.DataFrame,
             receita_por_data: pd.DataFrame,
             forma_pagamento: pd.DataFrame,
+            preco_medio_por_item: pd.DataFrame,
     ) -> None:
         fig = px.bar(
                 total_por_item,
@@ -48,5 +49,13 @@ class VisualizacaoCital:
                 names='forma_pagamento',
                 values='quantidade',
                 title='Forma de Pagamento Utilizada',
+            )
+        st.plotly_chart(fig)
+
+        fig = px.bar(
+                preco_medio_por_item,
+                x='nome',
+                y='preco_unitario',
+                title='Preço Médio por Tipo de Item',
             )
         st.plotly_chart(fig)

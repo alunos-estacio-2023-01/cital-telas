@@ -28,3 +28,6 @@ class ModeloCital:
 
     def obter_forma_pagamento(self) -> pd.DataFrame:
         return self.df.groupby('forma_pagamento')['quantidade'].sum().reset_index()
+
+    def obter_preco_medio_por_item(self) -> pd.DataFrame:
+        return self.df.groupby('nome')['preco_unitario'].mean().reset_index()
